@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    font-family: sans-serif;
+    padding: 0;
+}
+
+html{
+    min-height: 100%;
+}
+
+body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://wallpaperaccess.com/full/349967.jpg);
+}
+
+header{
+    overflow: hidden;
+    background-color: #00000044;
+    padding: 20px 0;
+}
+
+h1{
+    float: left;
+    color: white;
+    text-shadow: 0 0 5px #000000aa;
+    line-height: 40px;
+    padding: 0 20px;
+    font-weight: normal;
+}
+
+.rightPart{
+    float: right;
+    position: relative;
+}
+input{
+    position: absolute;
+    opacity: 0;
+}
+
+label{
+    width: 40px;
+    height: 40px;
+    display: block;
+    position: relative;
+    z-index: 5;
+    cursor: pointer;
+}
+
+span, span::after, span::before{
+    width: 60%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transition: 0.5s;
+    box-shadow: 0 0 5px #000;
+}
+
+span::after{
+    content: '';
+    width: 100%;
+    left: 0;
+    top: 5px;
+}
+
+span::before{
+    content: '';
+    width: 100%;
+    left: 0;
+    top: -5px;
+    transform: 2s;
+}
+
+input:checked ~ nav{
+    transform: translateX(-40px);
+}
+
+input:checked ~ label span{
+    transform: rotate(45deg);
+}
+
+input:checked ~ label span::after{
+    transform: rotate(145deg);
+    opacity: 0;
+}
+
+
+input:checked ~ label span::before{
+    transform: rotate(-90deg);
+    top: 0;
+    box-shadow: none;
+}
+
+nav{
+    position: absolute;
+    overflow: hidden;
+    right: 0px;
+    top: 0px;
+    transform: translateX(100%);
+    transition: 0.5s;
+    overflow-x: scroll;
+    white-space: nowrap;
+    font-size: 0;
+}
+
+nav::-webkit-scrollbar{
+    height: 2px;
+    background-color: #ffffff55;
+}
+
+nav::-webkit-scrollbar-thumb{
+    background: white;
+}
+
+nav::-webkit-scrollbar-thumb:hover{
+    background: #ffffff88;
+}
+
+nav a{
+    font-size: 20px;
+    display: inline-block;
+    text-decoration: none;
+    text-shadow: 0 0 5px #000000aa;
+    line-height: 40px;
+    color: white;
+    padding: 0 20px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+nav a:hover{
+    background-color: #ffffff22;
+}
